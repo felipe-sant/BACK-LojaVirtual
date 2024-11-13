@@ -10,6 +10,7 @@ export default class CompraController {
             await novaCompra.save()
             res.status(201).json(novaCompra)
         } catch (error) {
+            console.log(error)
             res.status(500).json({ message: 'Erro ao criar compra' })
         }
     }
@@ -19,6 +20,7 @@ export default class CompraController {
             const compras = await Compra.find()
             res.json(compras)
         } catch (error) {
+            console.log(error)
             res.status(500).json({ message: 'Erro ao buscar compras' })
         }
     }
